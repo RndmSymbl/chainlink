@@ -79,3 +79,56 @@ func (_m *ORM) FindForwarders(offset int, limit int) ([]forwarders.Forwarder, in
 
 	return r0, r1, r2
 }
+
+// FindForwardersByChain provides a mock function with given fields: evmChainId
+func (_m *ORM) FindForwardersByChain(evmChainId utils.Big) ([]forwarders.Forwarder, int, error) {
+	ret := _m.Called(evmChainId)
+
+	var r0 []forwarders.Forwarder
+	if rf, ok := ret.Get(0).(func(utils.Big) []forwarders.Forwarder); ok {
+		r0 = rf(evmChainId)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).([]forwarders.Forwarder)
+		}
+	}
+
+	var r1 int
+	if rf, ok := ret.Get(1).(func(utils.Big) int); ok {
+		r1 = rf(evmChainId)
+	} else {
+		r1 = ret.Get(1).(int)
+	}
+
+	var r2 error
+	if rf, ok := ret.Get(2).(func(utils.Big) error); ok {
+		r2 = rf(evmChainId)
+	} else {
+		r2 = ret.Error(2)
+	}
+
+	return r0, r1, r2
+}
+
+// FindForwardersInListByChain provides a mock function with given fields: evmChainId, addrs
+func (_m *ORM) FindForwardersInListByChain(evmChainId utils.Big, addrs []common.Address) ([]forwarders.Forwarder, error) {
+	ret := _m.Called(evmChainId, addrs)
+
+	var r0 []forwarders.Forwarder
+	if rf, ok := ret.Get(0).(func(utils.Big, []common.Address) []forwarders.Forwarder); ok {
+		r0 = rf(evmChainId, addrs)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).([]forwarders.Forwarder)
+		}
+	}
+
+	var r1 error
+	if rf, ok := ret.Get(1).(func(utils.Big, []common.Address) error); ok {
+		r1 = rf(evmChainId, addrs)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}

@@ -44,7 +44,9 @@ regarding Chainlink social accounts, news, and networking.
 6. Build and install Chainlink: `make install`
    - If you got any errors regarding locked yarn package, try running `yarn install` before this step
    - If `yarn install` throws a network connection error, try increasing the network timeout by running `yarn install --network-timeout 150000` before this step
-7. Run the node: `chainlink help`
+7. Create an `.env` file [according to your environment](https://docs.chain.link/docs/running-a-chainlink-node/) in `$HOME/.chainlink`
+8. When you are not using Docker append each line in the `.env` with `export` and then run  `source .env` to make settings available.
+9. Run the node: `chainlink node start` or consult `chainlink help`.
 
 For the latest information on setting up a development environment, see the [Development Setup Guide](https://github.com/smartcontractkit/chainlink/wiki/Development-Setup-Guide).
 
